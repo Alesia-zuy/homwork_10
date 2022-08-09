@@ -4,4 +4,6 @@ data = load_candidates('candidates.json')
 
 
 item = Candidates(data)
-print(item.get_by_skill('go'))
+a = item.get_all
+for i in a:
+    print(item.get_by_pk(i))
