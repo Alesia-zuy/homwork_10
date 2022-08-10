@@ -20,5 +20,12 @@ def page_candidates(x):
            f'<pre>{candidates_class.get_by_pk(x)}<pre>'
 
 
+@app.route("/skills/<x>")
+def page_skills(x):
+    skills = candidates_class.get_by_skill(x)
+    enumeration = [f'\n{candidates_class.get_by_pk(i)}\n' for i in skills]
+    return f'<pre>{" ".join(enumeration)}</pre>'
+
+
 if __name__ == '__main__':
     app.run()

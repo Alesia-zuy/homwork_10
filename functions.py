@@ -36,7 +36,10 @@ class Candidates:
         skill = []
 
         for item in self.json_file:
-            if skill_name in item['skills'].lower():
+            if skill_name.lower() in item['skills'].lower():
                 skill.append(item['pk'])
 
         return skill
+
+    def __repr__(self):
+        return self.json_file
