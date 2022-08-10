@@ -23,6 +23,12 @@ class Candidates:
                        f'{item["position"]}\n' \
                        f'{item["skills"]}'
 
+    def get_by_pk_picture(self, pk):
+        for item in self.json_file:
+            if item['pk'] == int(pk):
+                url = item["picture"]
+                return f"<img src='({url})'>"
+
     def get_by_skill(self, skill_name):
         """
         Вывод кандидатов по навыку
