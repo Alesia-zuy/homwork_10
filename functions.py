@@ -2,6 +2,9 @@ import json
 
 
 def load_candidates(file_):
+    """
+    Загружает json файл
+    """
     with open(file_, encoding='utf-8') as file:
         data_candidates = json.load(file)
         return data_candidates
@@ -24,10 +27,12 @@ class Candidates:
                        f'{item["skills"]}'
 
     def get_by_pk_picture(self, pk):
+        """
+        Вывод картинки по pk
+        """
         for item in self.json_file:
             if item['pk'] == int(pk):
-                url = item["picture"]
-                return f"<img src='({url})'>"
+                return f'<img src="{item["picture"]}">'
 
     def get_by_skill(self, skill_name):
         """
